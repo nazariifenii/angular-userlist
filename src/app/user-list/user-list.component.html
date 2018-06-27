@@ -1,0 +1,35 @@
+<section>
+<div class="search-bar">
+  <input class="search-input" type="text" placeholder="Search..." (keyup)="filterUser($event)">
+  <ul class="change-person-list">
+    <li>
+      <a (click)="getUsers()">Users</a>
+    </li>
+    <li>
+      <a (click)="getOrganizations()">Orgs</a>
+    </li>
+  </ul>
+</div>
+
+<div class="users-list">
+  <ul>
+    <li *ngFor="let user of userList | slice:0:10;">
+      <div class="user-profile">
+        <img [src]="user.avatar_url" alt="">
+        <div class="user-info-short">
+          <a>{{ user.login }}</a>
+          <div class="user-buttons-links">
+            <a [href]="user.html_url">See profile</a>
+            <a routerLink="#">See details</a>
+          </div>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<div class="navigate-btns">
+    <a routerLink="">Previous page</a>
+    <a routerLink="">Next page</a>
+</div>
+</section>

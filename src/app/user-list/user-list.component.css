@@ -1,0 +1,130 @@
+section{
+    height: 100vh;
+    background-color: rgb(88, 179, 241);
+}
+.search-bar {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  height: 50px;
+  background-color: rgb(41, 132, 197);
+}
+
+.search-input {
+  height: 30px;
+  width: 300px;
+  font-size: 20px;
+  padding: 0 10px;
+}
+
+.change-person-list {
+  display: flex;
+  flex-direction: row;
+  padding: 0;
+  color: aliceblue;
+}
+
+.change-person-list li {
+  padding: 0 10px;
+  font-size: 25px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 1s all;
+  border-radius: 15px 50px;
+}
+
+.change-person-list li:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.users-list {
+  background-color: rgb(88, 179, 241);
+  height: auto;
+}
+
+.users-list ul {
+  height: auto;
+  padding: 30px 100px;
+}
+
+.users-list li {
+  background-color: aliceblue;
+  margin: 20px 0;
+  height: auto;
+}
+
+.user-profile {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100px;
+}
+
+.user-profile img {
+  height: 90px;
+  width: 90px;
+  margin: 0 30px;
+  border-radius: 15px 50px;
+}
+
+.user-info-short {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 5px 30px;
+  height: 70%;
+  width: 75%;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.user-buttons-links {
+  display: flex;
+  align-self: flex-end;
+}
+
+.user-buttons-links a {
+  border: 1px solid rgb(41, 132, 197);
+  padding: 5px 20px;
+  cursor: pointer;
+  transition: 1s all;
+  border-radius: 15px 50px;
+  text-decoration: none;
+  color: black;
+}
+
+.user-buttons-links a:hover {
+  background-color: rgb(88, 179, 241);
+}
+
+.user-buttons-links a:visited {
+  color: black;
+}
+
+.user-buttons-links a:first-child {
+  margin-right: 20px;
+}
+
+.navigate-btns{
+    text-align: center;
+    padding: 20px 0;
+    background-color: rgb(88, 179, 241);
+}
+
+.navigate-btns a{
+    border: 1px solid rgb(41, 132, 197);
+    border-radius: 15px 50px;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 5px 30px;
+    cursor: pointer;
+    transition: 1s all;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.navigate-btns a:hover{
+    background-color: rgb(41, 132, 197);
+}
