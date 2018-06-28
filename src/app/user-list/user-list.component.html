@@ -13,14 +13,14 @@
 
 <div class="users-list">
   <ul>
-    <li *ngFor="let user of userList | slice:0:10;">
+    <li *ngFor="let user of userList;">
       <div class="user-profile">
         <img [src]="user.avatar_url" alt="">
         <div class="user-info-short">
           <a>{{ user.login }}</a>
           <div class="user-buttons-links">
             <a [href]="user.html_url">See profile</a>
-            <a routerLink="#">See details</a>
+            <a [routerLink]="['/profile', user.login]">See details</a>
           </div>
         </div>
       </div>

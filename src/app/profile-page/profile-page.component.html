@@ -1,0 +1,64 @@
+<section>
+
+  <div class="search-bar">
+    <div class="container">
+      <a routerLink="/">
+        < Back to users list</a>
+    </div>
+  </div>
+
+  <div class="user-header">
+    <div class="container">
+      <img [src]="userInfo.avatar_url" alt="">
+      <div class="user-header-info">
+        <h1>{{userInfo.login}} | {{userInfo.name}}</h1>
+        <ul>
+          <li>Followers: {{userInfo.followers}}</li>
+          <li>Following: {{userInfo.following}}</li>
+          <li>Public Gists: {{userInfo.public_gists}}</li>
+          <li>Public repos: {{userInfo.public_repos}}</li>
+          <li>Member since: {{userInfo.created_at | date}}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="user-followers">
+    <div class="container">
+      <h1>Followers</h1>
+      <ul>
+        <li *ngFor="let folower of followersList">
+          <a [href]="folower.url">
+            <img [src]="folower.avatar_url" alt="">
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="user-subscriptions">
+    <div class="container">
+      <h1>Subscriptions</h1>
+      <ul>
+        <li *ngFor="let sub of subscriptionsList">
+          <a [href]="sub.owner.url">
+            <img [src]="sub.owner.avatar_url" alt="">
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="user-organizations">
+    <div class="container">
+      <h1>Organizations</h1>
+      <ul>
+        <li *ngFor="let org of organizationsList">
+          <a [href]="org.url">
+            <img [src]="org.avatar_url" alt="">
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>

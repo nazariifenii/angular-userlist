@@ -12,7 +12,6 @@ export class UserListComponent implements OnInit {
   items: number = 4;
   userList: any = [];
   defaultArray: any = [];
-  usersShowCount: number = 0;
 
   constructor(private httpClient: HttpClient) { };
 
@@ -36,6 +35,7 @@ export class UserListComponent implements OnInit {
         console.log(this.defaultArray);
       })
   }
+  
   getOrganizations() {
     this.httpClient.get('https://api.github.com/organizations')
       .subscribe((data: any[]) => {

@@ -1,0 +1,89 @@
+section {
+  height: auto;
+  background-color: rgb(88, 179, 241);
+}
+
+.container {
+  margin: 0 150px;
+}
+
+h1{
+  padding-left: 10px;
+}
+
+.search-bar {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  height: 50px;
+  background-color: rgb(41, 132, 197);
+}
+
+.search-bar a {
+  border: 1px solid rgb(41, 132, 197);
+  border-radius: 15px 50px;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 5px 30px;
+  cursor: pointer;
+  transition: 1s all;
+  background-color: rgba(255, 255, 255, 0.5);
+  text-decoration: none;
+  color: #fff;
+}
+
+.user-header .container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin-top: 50px;
+}
+
+.user-header img {
+  height: 200px;
+  width: 200px;
+}
+
+.user-header-info {
+  padding-left: 50px;
+  font-size: 20px;
+}
+
+.user-followers,
+.user-subscriptions,
+.user-organizations {
+  font-size: 18px;
+}
+.user-followers .container,
+.user-subscriptions .container,
+.user-organizations .container,
+.user-header .container
+{
+  background-color: aliceblue;
+}
+
+.user-followers ul,
+.user-subscriptions ul,
+.user-organizations ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.user-followers li,
+.user-subscriptions li,
+.user-organizations li {
+  height: 30px;
+  margin: 10px;
+  width: 30px;
+}
+
+.user-followers li img,
+.user-subscriptions li img,
+.user-organizations li img {
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+}
