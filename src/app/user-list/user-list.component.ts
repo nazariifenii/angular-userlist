@@ -11,7 +11,9 @@ export class UserListComponent implements OnInit {
 
   items: number = 4;
   userList: any = [];
+  orgsList: any = [];
   defaultArray: any = [];
+  showUsers: boolean = true;
 
   constructor(private httpClient: HttpClient) { };
 
@@ -20,9 +22,9 @@ export class UserListComponent implements OnInit {
   }
 
   filterUser(event: any) {
-    let inputData:any = event.target.value;
-      this.userList = this.defaultArray;
-      this.userList = this.userList.filter(user=>user.login.includes(inputData));
+    let inputData: any = event.target.value;
+    this.userList = this.defaultArray;
+    this.userList = this.userList.filter(user => user.login.includes(inputData));
   }
 
   getUsers() {
@@ -30,20 +32,10 @@ export class UserListComponent implements OnInit {
       .subscribe((data: any[]) => {
         if (data.length) {
           this.defaultArray = data;
-          this.userList = this.defaultArray;
+          this.userList = data.filter(user => user.type === "User");
+          this.orgsList = data.filter(user => user.type === "Organization");
         }
-        console.log(this.defaultArray);
-      })
-  }
-  
-  getOrganizations() {
-    this.httpClient.get('https://api.github.com/organizations')
-      .subscribe((data: any[]) => {
-        if (data.length) {
-          this.defaultArray = data;
-          this.userList = this.defaultArray;
-        }
-        console.log(this.defaultArray);
+        console.log(this.userList);
       })
   }
 }

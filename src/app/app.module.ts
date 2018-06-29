@@ -5,7 +5,6 @@ import { AppComponent } from './app.component';
 import { UserListComponent } from './user-list/user-list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-import { OrgsListComponent } from './orgs-list/orgs-list.component';
 import { ProfilePageComponent } from './profile-page/profile-page.component';
 import { RouterModule } from '@angular/router';
 
@@ -18,7 +17,6 @@ const routes = [
   declarations: [
     AppComponent,
     UserListComponent,
-    OrgsListComponent,
     ProfilePageComponent
   ],
   imports: [

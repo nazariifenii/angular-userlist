@@ -1,35 +1,55 @@
 <section>
-<div class="search-bar">
-  <input class="search-input" type="text" placeholder="Search..." (keyup)="filterUser($event)">
-  <ul class="change-person-list">
-    <li>
-      <a (click)="getUsers()">Users</a>
-    </li>
-    <li>
-      <a (click)="getOrganizations()">Orgs</a>
-    </li>
-  </ul>
-</div>
+  <div class="search-bar" (click)="getUsers()">
+    <div class="container">
+      <input class="search-input" type="text" placeholder="Search..." (keyup)="filterUser($event)">
+      <ul class="change-person-list">
+        <li>
+          <a (click)="showUsers = true">Users</a>
+        </li>
+        <li>
+          <a (click)="showUsers = false">Orgs</a>
+        </li>
+      </ul>
+    </div>
+  </div>
 
-<div class="users-list">
-  <ul>
-    <li *ngFor="let user of userList;">
-      <div class="user-profile">
-        <img [src]="user.avatar_url" alt="">
-        <div class="user-info-short">
-          <a>{{ user.login }}</a>
-          <div class="user-buttons-links">
-            <a [href]="user.html_url">See profile</a>
-            <a [routerLink]="['/profile', user.login]">See details</a>
+  <div class="users-list">
+    <div class="container">
+      <ul *ngIf="showUsers">
+        <li *ngFor="let user of userList">
+          <div class="user-profile">
+            <img [src]="user.avatar_url" alt="">
+            <div class="user-info-short">
+              <a>{{ user.login }}</a>
+              <div class="user-buttons-links">
+                <a [href]="user.html_url">See profile</a>
+                <a [routerLink]="['/profile', user.login]">See details</a>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-    </li>
-  </ul>
-</div>
+        </li>
+      </ul>
+      <ul *ngIf="!showUsers">
+        <li *ngFor="let user of orgsList">
+          <div class="user-profile">
+            <img [src]="user.avatar_url" alt="">
+            <div class="user-info-short">
+              <a>{{ user.login }}</a>
+              <div class="user-buttons-links">
+                <a [href]="user.html_url">See profile</a>
+                <a [routerLink]="['/profile', user.login]">See details</a>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
 
-<div class="navigate-btns">
-    <a routerLink="">Previous page</a>
-    <a routerLink="">Next page</a>
-</div>
+  <div class="navigate-btns">
+    <div class="container">
+      <a routerLink="">Previous page</a>
+      <a routerLink="">Next page</a>
+    </div>
+  </div>
 </section>
