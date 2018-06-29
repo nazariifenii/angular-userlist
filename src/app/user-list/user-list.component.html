@@ -15,8 +15,8 @@
 
   <div class="users-list">
     <div class="container">
-      <ul *ngIf="showUsers">
-        <li *ngFor="let user of userList">
+      <ul *ngIf="showUsers" class="list">
+        <li *ngFor="let user of userList | slice: (curPage * pageSize) - pageSize :curPage * pageSize">
           <div class="user-profile">
             <img [src]="user.avatar_url" alt="">
             <div class="user-info-short">
@@ -29,7 +29,7 @@
           </div>
         </li>
       </ul>
-      <ul *ngIf="!showUsers">
+      <ul *ngIf="!showUsers" class="list">
         <li *ngFor="let user of orgsList">
           <div class="user-profile">
             <img [src]="user.avatar_url" alt="">
@@ -48,8 +48,8 @@
 
   <div class="navigate-btns">
     <div class="container">
-      <a routerLink="">Previous page</a>
-      <a routerLink="">Next page</a>
+      <button [disabled]="curPage == 1" (click)="curPage = curPage - 1">Previous page</button>
+      <button  [disabled]="curPage>=userList.length/pageSize" (click)="curPage = curPage + 1">Next page</button>
     </div>
   </div>
 </section>

@@ -21,7 +21,6 @@ export class ProfilePageComponent implements OnInit {
   ngOnInit() {
     this.sub = this.route.params.subscribe(params => {
       this.username = params['id'];
-      console.log(this.username);
     });
     this.getUserInfo();
     this.getFollowers();
@@ -47,7 +46,6 @@ export class ProfilePageComponent implements OnInit {
     this.httpClient.get(`https://api.github.com/users/${this.username}/subscriptions`)
       .subscribe((data: any[]) => {
         this.subscriptionsList = data; 
-        console.log(data);
       })
   }
 
@@ -55,7 +53,6 @@ export class ProfilePageComponent implements OnInit {
     this.httpClient.get(`https://api.github.com/users/${this.username}/orgs`)
       .subscribe((data: any[]) => {
         this.organizationsList = data; 
-        console.log(data);
       })
   }
 

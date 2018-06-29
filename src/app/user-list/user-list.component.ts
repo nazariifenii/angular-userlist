@@ -8,18 +8,26 @@ import { HttpClient } from '@angular/common/http';
 })
 
 export class UserListComponent implements OnInit {
-
-  items: number = 4;
+  
   userList: any = [];
   orgsList: any = [];
   defaultArray: any = [];
   showUsers: boolean = true;
+  curPage : number;
+  pageSize : number;
 
-  constructor(private httpClient: HttpClient) { };
+  constructor(private httpClient: HttpClient) {
+    this.curPage = 1;
+    this.pageSize = 10;
+   };
 
   ngOnInit() {
     this.getUsers();
   }
+
+  numberOfPages(){
+    return Math.ceil(this.userList.length / this.pageSize);
+  };
 
   filterUser(event: any) {
     let inputData: any = event.target.value;
@@ -34,8 +42,8 @@ export class UserListComponent implements OnInit {
           this.defaultArray = data;
           this.userList = data.filter(user => user.type === "User");
           this.orgsList = data.filter(user => user.type === "Organization");
+          this.curPage = 1;
         }
-        console.log(this.userList);
       })
   }
 }
